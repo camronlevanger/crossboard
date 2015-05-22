@@ -1,0 +1,103 @@
+<!--All of these panels should probably become directives-->
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <ul>
+            <li ng-repeat="message in messages"></li>
+        </ul>
+        <p>...</p>
+    </div>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading">Basic Server Info</div>
+    <div class="panel-body">
+        <p>
+            <strong>Last Started:</strong> {{started}}
+        </p>
+
+        <p>
+            <strong>Uptime:</strong> {{uptime}}
+        </p>
+
+        <p>
+            <strong>Server Time:</strong> {{servertime}}
+        </p>
+
+        <p>
+            <strong>Created:</strong> {{node_info.created}}
+        </p>
+
+        <p>
+            <strong>Config Directory:</strong> {{node_info.directory}}
+        </p>
+
+        <p>
+            <strong>Workers:</strong> {{node_info.workers}}
+        </p>
+
+        <p>
+            <strong>PID:</strong> {{node_info.pid}}
+        </p>
+
+        <p>
+            <strong>Created:</strong> {{node_info.created}}
+        </p>
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">Worker Info</div>
+    <div class="panel-body">
+        <ul>
+            <li ng-repeat="worker in workers">
+                <p><strong>{{worker.id}}</strong></p>
+                <p><strong>Status:</strong> {{worker.status}}</p>
+                <p><strong>Type:</strong> {{worker.type}}</p>
+                <p><strong>PID:</strong> {{worker.pid}}</p>
+                <p><strong>Uptime:</strong> {{worker.uptime}}</p>
+                <p><strong>Last Started:</strong> {{worker.started}}</p>
+                <p><strong>Startup Time:</strong> {{worker.startup_time}}</p>
+            </li>
+        </ul>
+
+        <p>
+            <strong>Worker Logs:</strong>
+        </p>
+
+        <ul>
+            <li ng-repeat="log in logs">
+                <p><strong>{{worker.id}}</strong></p>
+                <p><strong>Status:</strong> {{worker.status}}</p>
+                <p><strong>Type:</strong> {{worker.type}}</p>
+                <p><strong>PID:</strong> {{worker.pid}}</p>
+                <p><strong>Uptime:</strong> {{worker.uptime}}</p>
+                <p><strong>Last Started:</strong> {{worker.started}}</p>
+                <p><strong>Startup Time:</strong> {{worker.startup_time}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-warning">
+    <div class="panel-heading">Process Info</div>
+    <div class="panel-body">
+        <p>
+            <strong>Descriptors:</strong> {{process_info.descriptors}}
+        </p>
+
+        <p>
+            <strong>Threads:</strong> {{process_info.threads}}
+        </p>
+
+        <p>
+            <strong>Sockets: {{process_info.sockets.length}}</strong>
+        </p>
+        <ul>
+            <li ng-repeat="socket in process_info.sockets">
+                <strong>Status:</strong> {{socket.status}}
+                <strong>Local Address:</strong> {{socket.local}}
+                <strong>Remote Address:</strong> {{socket.remote}}
+                <strong>Type:</strong> {{socket.type}}
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-danger">...</div>
+
